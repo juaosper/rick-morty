@@ -52,7 +52,7 @@ const Home=()=> {
   return (
     <div className="App">
       <h1 className="text-center mb-4">Characters</h1>
-      <Search setPageNumber={setPageNumber} setSearch={setSearch} />
+        <Search setPageNumber={setPageNumber} setSearch={setSearch} />
       <div className="container">
         <div className="row">
           <Filters 
@@ -60,7 +60,7 @@ const Home=()=> {
           setStatus={setStatus} 
           setPageNumber={setPageNumber} 
           setGender={setGender} /> 
-          <div className="col-lg-8 col-12">
+          <div className="col-8">
             <div className="row">
               <Cards page='/' results={results} />
             </div>  
@@ -68,6 +68,7 @@ const Home=()=> {
         </div>
       </div>
       <Pagination info={info} pageNumber={pageNumber} setPageNumber={setPageNumber} />
+      <h1>Juanse</h1>
     </div>
   );
 }

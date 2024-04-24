@@ -3,13 +3,23 @@ import {NavLink, Link} from 'react-router-dom'
 import '../../App.css'
 
 const Navbar = () => {
-  return (
+    let refresh =()=>{
+        window.location.reload(true);
+    }
+    return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary mb-4">
         <div className="container">
-        <Link to='/' className="fs-3 fw-bold ubuntu navbar-brand">
+        <Link to='/' className="fs-3 fw-bold ubuntu navbar-brand" onClick={refresh}>
             Rick & Morty<span className="text-primary"> Wiki</span>
         </Link>
-            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button 
+            className="navbar-toggler" 
+            type="button" 
+            data-bs-toggle="collapse" 
+            data-bs-target="#navbarNav" 
+            aria-controls="navbarNav" 
+            aria-expanded="false" 
+            aria-label="Toggle navigation">
                 <style jsx>
                     {`
                     button[aria-expanded='true'] > .open{

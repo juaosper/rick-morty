@@ -15,8 +15,9 @@ const Episodes = () => {
       let data = await fetch(api).then(res=>res.json());
       setInfo(data);
       let a = await Promise.all(
-        data.characters.map((x)=>{
-          return fetch(x).then((res)=>res.json())
+        data.characters.map(async (x)=>{
+          const res = await fetch(x);
+          return await res.json();
         })
       );
       setResults(a);
@@ -24,22 +25,23 @@ const Episodes = () => {
   },[api]);
 
   return (
-    <div className='cotainer'>
-      <div className='row mb-4'>
-        <h1 className='text-center mb-4'>Episode: 
-        <span className='text-primary'> {name === "" ? 'Unknown' : name}</span></h1>
-        <h5 className='text-center'>
+    <div className="Episode">
+      <h1 className="text-center mb-4">Episode: 
+        <span className='text-primary'> {name === "" ? 'Unknown' : name}</span>
+      </h1>
+      <h5 className='text-center'>
           Air Date {air_date === "" ? 'Unknown' : air_date}
-        </h5>
-      </div>
-      <div  style={{padding : '20px'}} className='row'>
-        <div className='col-3'>
-          <h4 className='text-center fw-bold fs-4 mb-2'>Pick Episodes</h4>
-          <InputGroup setId={setId} name='Episode' total={51}/>
-        </div>
-        <div className='col-8'>
-          <div className='row'>
-            <Cards pages='/episodes/' results={results}/>
+      </h5>
+      <div className="container">
+        <div  style={{padding : '20px'}} className='row'>
+          <div className='col-3'>
+            <h4 className='text-center fw-bold fs-4 mb-2'>Pick Episodes</h4>
+              <InputGroup setId={setId} name={'Episode '} total={51}/>
+          </div>
+          <div className='col-8'>
+            <div className='row'>
+              <Cards page='/episodes/' results={results}/>
+            </div>
           </div>
         </div>
       </div>
