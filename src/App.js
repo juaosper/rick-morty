@@ -68,7 +68,6 @@ const Home=()=> {
         </div>
       </div>
       <Pagination info={info} pageNumber={pageNumber} setPageNumber={setPageNumber} />
-      <h1>Juanse</h1>
     </div>
   );
 }

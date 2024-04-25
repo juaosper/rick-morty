@@ -3,15 +3,19 @@ $radius: 10px;
 .cards{
     border: 2px solid #0b5ed7;
     border-radius: $radius;
+    box-shadow: 1px 3px 9px rgba($color: #000000, $alpha: 0.25);
+    background-color: #F5FBFF
 }
 
 //Redondea bordes superiores de la img
 .img{
     border-radius: $radius $radius 0px 0px;
+    
 }
 
 .badge{
     top: 10px;
     right: 20px;
     font-size: 17px;
+    box-shadow: 1px 3px 9px rgba($color: #000000, $alpha: 0.25);
 }
